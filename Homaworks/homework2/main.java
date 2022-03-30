@@ -46,7 +46,7 @@ public class Main {
                     sum += Integer.parseInt(java.lang.String.valueOf(arr[i][j]));
                 }
                 catch (NumberFormatException e) {
-                    throw new MyArrayDataException("Некорректный символ в массиве: х = " + i + " y = " + j);
+                    throw new MyArrayDataException("Некорректный символ в массиве: строка = " + i + " столбец = " + j);
                 }
             }
         }
