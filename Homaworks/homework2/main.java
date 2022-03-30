@@ -10,7 +10,7 @@ public class Main {
                 {"1", "2", "3", "4"},
                 {"1", "2", "3", "4"}};
         java.lang.String[][] incorrectSizeArray = new String[][]{
-                {"1", "2", "3", "4"},
+                {"1", "2", "3"},
                 {"1", "2", "3", "4"},
                 {"1", "2", "3", "4"}};
         java.lang.String[][] incorrectDataArray = new String[][]{
@@ -22,17 +22,20 @@ public class Main {
         System.out.println();
 
         try {
-            arrCorrect(correctArray); }
+            arrCorrect(incorrectSizeArray); }
         catch (MyArraySizeException e) {
             e.printStackTrace();
         }
+
+        arrCorrect(incorrectSizeArray);
+
     }
 
 
     public static int arrCorrect(String[][] arr) throws MyArraySizeException, MyArrayDataException {
         int sum = 0;
             if (arr.length != 4) {
-            throw new MyArraySizeException();
+            throw new MyArraySizeException("Некорректная размерность массива -" + arr.length);
         }
         for (int i = 0; i < arr.length; i++) {
             if (arr[i].length != 4) {
