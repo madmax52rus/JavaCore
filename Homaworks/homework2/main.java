@@ -27,7 +27,7 @@ public class Main {
             e.printStackTrace();
         }
 
-        arrCorrect(incorrectSizeArray);
+        arrCorrect(incorrectDataArray);
 
     }
 
@@ -46,7 +46,7 @@ public class Main {
                     sum += Integer.parseInt(java.lang.String.valueOf(arr[i][j]));
                 }
                 catch (NumberFormatException e) {
-                    throw new MyArrayDataException(i, j);
+                    throw new MyArrayDataException("Некорректный символ в массиве: х = " + i + " y = " + j);
                 }
             }
         }
