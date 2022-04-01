@@ -1,44 +1,57 @@
 package homework3;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
-public class Box<T extends Fruit> {
-    private T master;
+public class Box<T  extends Fruit> {
+    private T[] array;
 
-    public Box(T master) {
-        this.master = master;
+    public Box(T[] array) {
+        this.array = array;
     }
 
-    public T getMaster() {
-        return master;
+    public T[] getArray() {
+        return array;
     }
 
-    public void setMaster(T master) {
-        this.master = master;
+    public void setArray(T[] array) {
+        this.array = array;
     }
 
     @Override
     public String toString() {
-        return "Box {" +
-                " master = " + master +
+        return "Box{" +
+                "array=" + Arrays.toString(array) +
                 '}';
     }
 
     public static void main(String[] args) {
-        ArrayList<Integer> orange = new ArrayList();
+
+        Box<double>[] orangeBox = new Box();
+        Box[] appleBox =  new Box(10);
+
+       /**  ArrayList<Integer> orange = new ArrayList();
         orange.add(1);
         orange.add(1);
         orange.add(1);
         orange.add(1);
         orange.add(1);
-        System.out.println(orange.size() + " апельсинов в коробке");
+        System.out.println("апельсинов в коробке = "+ orange.size());
 
         ArrayList<Integer> apple = new ArrayList();
         apple.add(2);
         apple.add(2);
         apple.add(2);
-        System.out.println(apple.size() + " яблока в коробке");
+        System.out.println("яблок в коробке = " + apple.size()); **/
     }
+    public double calcWeight() {
+        double sum = 0.0;
 
+        for (T num  : array) {
+            sum = sum + num;
+        }
+
+        return sum;
+    }
 
 }
